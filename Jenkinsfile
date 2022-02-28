@@ -9,12 +9,12 @@ pipeline {
             }
         }
         stage ('DeployToStaging') {
-/*             when {
+            when {
                 branch 'main'
-            } */
-            steps ('SSHTransfer') {
+            }
+            steps ('SSHTransferToStaging') {
                 sshPublisher(
-                    continueOnError: false, failOnError: true,
+                    failOnError: true, continueOnError: false,
                     publishers: [
                         sshPublisherDesc(
                             configName: 'staging-webserver',
@@ -34,6 +34,39 @@ pipeline {
                                 )
                             ] 
                                          
+                        )
+                    ]
+                )
+            }
+        }
+        
+        stage ('DeployToProduction') {
+            when {
+                branch 'main'
+            }
+            steps ('SSHTransferToProd') {
+                input 'Is Staging OK?'
+                milestone (1)
+                sshPublisher(
+                    failOnError: true, continueOnError: false,
+                    publishers: [
+                        sshPublisherDesc(
+                            configName: 'prod-webserver',
+                            verbose: true, 
+                            sshCredentials: [
+                                encryptedPassphrase: '{AQAAABAAAAAQc6cGLLA3ZMmtEdLMI4IJWe+t2LMbBNDd363MCpwaBfs=}', 
+                                key: '', 
+                                keyPath: '/tmp/prod-webserver.pem', 
+                                username: 'ubuntu'
+                            ], 
+                            transfers: [
+                                sshTransfer(
+                                    sourceFiles: 'wedding/listi-wedding.zip',
+                                    removePrefix: 'wedding/',
+                                    remoteDirectory: '/tmp',
+                                    execCommand: 'sudo unzip -o /tmp/listi-wedding.zip -d /var/www/html', 
+                                )
+                            ]        
                         )
                     ]
                 )
