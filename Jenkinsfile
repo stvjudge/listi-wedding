@@ -4,9 +4,10 @@ pipeline {
         stage ('Build'){
             steps {
                 echo 'Running build automation'
-                echo 'Clean up Artifact folder'
-                sh 'sudo rm -rf /var/lib/jenkins/workspace/*'
-                zip archive: true, dir: '', glob: '', zipFile: 'listi-wedding.zip'
+                if [ -d "/tmp/listi-wedding/"]; then
+                    sh 'rm -rf /tmp/listi-wedding/*'
+                else
+                    zip archive: true, dir: '/tmp/listi-wedding/', glob: '', zipFile: 'listi-wedding.zip'
             }
         }
         stage ('DeployToStaging') {
