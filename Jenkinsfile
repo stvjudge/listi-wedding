@@ -25,20 +25,23 @@ pipeline {
                                 transfers: [
                                     sshTransfer(
                                         cleanRemote: false, 
-                                        excludes: '', 
-                                        execCommand: 'sudo rm -rf /var/www/html/* && unzip /tmp/listi-wedding.zip -d /var/www/html', 
-                                        execTimeout: 120000, 
+                                        excludes: '',
                                         flatten: false, 
                                         makeEmptyDirs: false, 
                                         noDefaultExcludes: false, 
-                                        patternSeparator: '[, ]+', 
+                                        patternSeparator: '[, ]+',
+                                        sourceFiles: '/tmp/listi-wedding/listi-wedding.zip',
+                                        removePrefix: 'tmp/listi-wedding/', 
                                         remoteDirectory: '/tmp', 
                                         remoteDirectorySDF: false, 
-                                        removePrefix: 'tmp/listi-wedding/', 
-                                        sourceFiles: '/tmp/listi-wedding/listi-wedding.zip')], 
-                                        usePromotionTimestamp: false, 
-                                        useWorkspaceInPromotion: false, 
-                                        verbose: true)])
+                                        execCommand: 'sudo rm -rf /var/www/html/* && unzip /tmp/listi-wedding.zip -d /var/www/html', 
+                                        execTimeout: 120000
+                                    )
+                                ] 
+                                         
+                        )
+                    ]
+                )
             }
         }
     }
