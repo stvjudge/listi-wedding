@@ -4,10 +4,8 @@ pipeline {
         stage ('Build'){
             steps {
                 echo 'Running build automation'
-                if [ -d "/tmp/listi-wedding/"]; then
-                    sh 'rm -rf /tmp/listi-wedding/*'
-                else
-                    zip archive: true, dir: '/tmp/listi-wedding/', glob: '', zipFile: 'listi-wedding.zip'
+                sh 'mkdir /tmp/listi-wedding'
+                zip archive: true, dir: '/tmp/listi-wedding/', glob: '', zipFile: 'listi-wedding.zip'
             }
         }
         stage ('DeployToStaging') {
