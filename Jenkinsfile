@@ -5,14 +5,14 @@ pipeline {
             steps {
                 echo 'Running build automation'
                 sh 'mkdir -p /tmp/listi-wedding'
-                zip archive: true, dir: '', exclude: '', glob: '', overwrite: true, zipFile: '/tmp/listi-wedding/listi-wedding.zip'
+                zip archive: true, dir: '', exclude: '', glob: '', overwrite: true, zipFile: 'listi-wedding.zip'
             }
         }
-        stage ('Deploy to Staging') {
+        stage ('DeployToStaging') {
 /*             when {
                 branch 'main'
             } */
-            steps ('SSH transfer') {
+            steps ('SSHTransfer') {
                 sshPublisher(
                     continueOnError: false, failOnError: true,
                     publishers: [
@@ -27,8 +27,8 @@ pipeline {
                             ], 
                             transfers: [
                                 sshTransfer(
-                                    sourceFiles: 'tmp/listi-wedding/listi-wedding.zip',
-                                    removePrefix: 'tmp/',
+                                    sourceFiles: 'listi-wedding.zip',
+                                    removePrefix: '',
                                     remoteDirectory: '/tmp',
                                     //*execCommand: 'sudo unzip /tmp/listi-wedding.zip -o -d /var/www/html', 
                                 )
