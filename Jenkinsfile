@@ -4,7 +4,7 @@ pipeline {
         stage ('Build'){
             steps {
                 echo 'Running build automation'
-                sh 'sudo mkdir -p wedding'
+                sh 'mkdir -p wedding'
                 //*zip archive: true, dir: '', exclude: '', glob: '', overwrite: true, zipFile: './zip/listi-wedding.zip'
                 archiveArtifacts artifacts: 'wedding/listi-wedding.zip'
             }
