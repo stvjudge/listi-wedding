@@ -14,19 +14,20 @@ pipeline {
             } */
             steps {
                 withCredentials([usernamePassword(credentialsId: 'deploy_to_staging', usernameVariable: 'USERNAME', passowrdVariable: 'USERPASS')]) {
-                    ssPublisher(
+                    sshPublisher(
                         failOnError: true,
                         continueOnError: false,
-                        publisher: [
+                        publishers: [
                             sshPublisherDesc(
-                                configName: 'staging-webserver',
+                                configName: 'staging',
                                 sshCredentials: [
                                     username: "$USERNAME",
                                     encryptedPassphrase: "$USERPASS"
-                                ],
+                                ], 
                                 transfers: [
                                     sshTransfer(
-                                        sourceFiles: 'listi-wedding.zip',
+                                        sourceFiles: 'tmp/listi-wedding/listi-wedding.zip',
+                                        removePrefix: 'tmp/',
                                         remoteDirectory: '/tmp',
                                         execCommand: 'sudo rm -rf /var/www/html/* && unzip /tmp/listi-wedding.zip -d /var/www/html'
                                     )
