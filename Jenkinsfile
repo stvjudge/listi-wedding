@@ -9,9 +9,9 @@ pipeline {
             }
         }
         stage ('DeployToStaging') {
-            when {
+/*             when {
                 branch 'main'
-            }
+            } */
             steps {
                 withCredentials([usernamePassword(credentialsId: 'deploy_to_staging', usernameVariable: 'USERNAME', passowrdVariable: 'USERPASS')]) {
                     ssPublisher(
