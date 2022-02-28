@@ -13,29 +13,27 @@ pipeline {
                 branch 'main'
             } */
             steps {
-                withCredentials([usernamePassword(credentialsId: 'deploy_to_staging', usernameVariable: 'USERNAME', passowrdVariable: 'USERPASS')]) {
-                    sshPublisher(
-                        failOnError: true,
-                        continueOnError: false,
-                        publishers: [
-                            sshPublisherDesc(
-                                configName: 'staging',
-                                sshCredentials: [
-                                    username: "$USERNAME",
-                                    encryptedPassphrase: "$USERPASS"
-                                ], 
-                                transfers: [
-                                    sshTransfer(
-                                        sourceFiles: 'tmp/listi-wedding/listi-wedding.zip',
-                                        removePrefix: 'tmp/',
-                                        remoteDirectory: '/tmp',
-                                        execCommand: 'sudo rm -rf /var/www/html/* && unzip /tmp/listi-wedding.zip -d /var/www/html'
-                                    )
-                                ]
-                            )
-                        ]
-                    )
-                }
+                sshPublisher(
+                    publishers: [
+                        sshPublisherDesc(
+                            configName: 'staging-webserver', 
+                            transfers: [
+                                sshTransfer(
+                                    cleanRemote: false, 
+                                    excludes: '', 
+                                    execCommand: 'sudo rm -rf /var/www/html/* && unzip /tmp/listi-wedding.zip -d /var/www/html', 
+                                    execTimeout: 120000, 
+                                    flatten: false, 
+                                    makeEmptyDirs: false, 
+                                    noDefaultExcludes: false, 
+                                    patternSeparator: '[, ]+', 
+                                    remoteDirectory: '/tmp', 
+                                    remoteDirectorySDF: false, 
+                                    removePrefix: 'tmp/listi-wedding/', 
+                                    sourceFiles: '/tmp/listi-wedding/listi-wedding.zip')], 
+                                    usePromotionTimestamp: false, 
+                                    useWorkspaceInPromotion: false, 
+                                    verbose: true)])
             }
         }
     }
