@@ -17,23 +17,28 @@ pipeline {
                     publishers: [
                         sshPublisherDesc(
                             configName: 'staging-webserver', 
-                            transfers: [
-                                sshTransfer(
-                                    cleanRemote: false, 
-                                    excludes: '', 
-                                    execCommand: 'sudo rm -rf /var/www/html/* && unzip /tmp/listi-wedding.zip -d /var/www/html', 
-                                    execTimeout: 120000, 
-                                    flatten: false, 
-                                    makeEmptyDirs: false, 
-                                    noDefaultExcludes: false, 
-                                    patternSeparator: '[, ]+', 
-                                    remoteDirectory: '/tmp', 
-                                    remoteDirectorySDF: false, 
-                                    removePrefix: 'tmp/listi-wedding/', 
-                                    sourceFiles: '/tmp/listi-wedding/listi-wedding.zip')], 
-                                    usePromotionTimestamp: false, 
-                                    useWorkspaceInPromotion: false, 
-                                    verbose: true)])
+                            sshCredentials: [
+                                encryptedPassphrase: '{AQAAABAAAAAQrhIcpQYZgE5K9i1jYgAWU6n37NI+UlmUadU9oootAs0=}', 
+                                key: '', 
+                                keyPath: '/tmp/staging-webserver.pem', 
+                                username: 'ubuntu'], 
+                                transfers: [
+                                    sshTransfer(
+                                        cleanRemote: false, 
+                                        excludes: '', 
+                                        execCommand: 'sudo rm -rf /var/www/html/* && unzip /tmp/listi-wedding.zip -d /var/www/html', 
+                                        execTimeout: 120000, 
+                                        flatten: false, 
+                                        makeEmptyDirs: false, 
+                                        noDefaultExcludes: false, 
+                                        patternSeparator: '[, ]+', 
+                                        remoteDirectory: '/tmp', 
+                                        remoteDirectorySDF: false, 
+                                        removePrefix: 'tmp/listi-wedding/', 
+                                        sourceFiles: '/tmp/listi-wedding/listi-wedding.zip')], 
+                                        usePromotionTimestamp: false, 
+                                        useWorkspaceInPromotion: false, 
+                                        verbose: true)])
             }
         }
     }
