@@ -25,10 +25,10 @@ pipeline {
                             ], 
                             transfers: [
                                 sshTransfer(
-                                    sourceFiles: 'tmp/listi-wedding/listi-wedding.zip',
-                                    removePrefix: 'tmp/listi-wedding/', 
+                                    sourceFiles: '/tmp/listi-wedding/listi-wedding.zip',
+                                    removePrefix: '/tmp/listi-wedding/', 
                                     remoteDirectory: '/tmp', 
-                                    execCommand: 'sudo rm -rf /var/www/html/* && unzip /tmp/listi-wedding.zip -d /var/www/html', 
+                                    execCommand: 'sudo unzip /tmp/listi-wedding.zip -o -d /var/www/html', 
                                 )
                             ] 
                                          
