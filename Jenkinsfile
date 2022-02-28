@@ -5,7 +5,7 @@ pipeline {
             steps {
                 echo 'Running build automation'
                 sh 'mkdir -p /tmp/listi-wedding'
-                zip archive: true, dir: '', exclude: '', glob: '', overwrite: true, zipFile: '/tmp/listi-wedding/listi-wedding.zip'
+                zip archive: true, dir: '', exclude: '', glob: '', overwrite: true, zipFile: './zip/listi-wedding.zip'
             }
         }
         stage ('DeployToStaging') {
@@ -27,8 +27,8 @@ pipeline {
                             ], 
                             transfers: [
                                 sshTransfer(
-                                    sourceFiles: '../../../../../tmp/listi-wedding/listi-wedding.zip',
-                                    removePrefix: '../../../../../tmp/listi-wedding',
+                                    sourceFiles: 'zip/listi-wedding.zip',
+                                    removePrefix: 'zip/',
                                     remoteDirectory: '//tmp',
                                     //*execCommand: 'sudo unzip /tmp/listi-wedding.zip -o -d /var/www/html', 
                                 )
