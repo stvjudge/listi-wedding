@@ -22,7 +22,7 @@ pipeline {
                             sshCredentials: [
                                 encryptedPassphrase: '{AQAAABAAAAAQrhIcpQYZgE5K9i1jYgAWU6n37NI+UlmUadU9oootAs0=}', 
                                 key: '', 
-                                keyPath: '/tmp/staging-webserver.pem', 
+                                keyPath: '/home/ubuntu/staging-webserver.pem', 
                                 username: 'ubuntu'
                             ], 
                             transfers: [
@@ -39,7 +39,7 @@ pipeline {
                 )
             }
         }
-        
+
         stage ('DeployToProduction') {
             when {
                 branch 'main'
@@ -56,7 +56,7 @@ pipeline {
                             sshCredentials: [
                                 encryptedPassphrase: '{AQAAABAAAAAQc6cGLLA3ZMmtEdLMI4IJWe+t2LMbBNDd363MCpwaBfs=}', 
                                 key: '', 
-                                keyPath: '/tmp/prod-webserver.pem', 
+                                keyPath: '/home/ubuntu/prod-webserver.pem', 
                                 username: 'ubuntu'
                             ], 
                             transfers: [
