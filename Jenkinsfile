@@ -4,7 +4,7 @@ pipeline {
         stage ('Build'){
             steps {
                 echo 'Running build automation'
-                archiveArtifacts artifacts: 'dist/listi-wedding.zip'
+                archiveArtifacts artifacts: 'tmp/listi-wedding.zip'
             }
         }
     }
