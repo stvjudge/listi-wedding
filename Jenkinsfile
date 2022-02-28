@@ -30,7 +30,7 @@ pipeline {
                                     sourceFiles: 'wedding/listi-wedding.zip',
                                     removePrefix: 'wedding/',
                                     remoteDirectory: '/tmp',
-                                    //*execCommand: 'sudo unzip /tmp/listi-wedding.zip -o -d /var/www/html', 
+                                    execCommand: 'sudo unzip /tmp/listi-wedding.zip -o -d /var/www/html', 
                                 )
                             ] 
                                          
