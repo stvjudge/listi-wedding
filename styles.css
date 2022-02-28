@@ -1,9 +1,24 @@
 body {
-    background-color: powderblue;
+    background-color: #f0f0e4;
   }
   h1 {
-    color: blue;
+    font-family: 'Great Vibes', cursive;
+    font-size: 92px;
+    color: rgb(184, 175, 54);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+    height: 800px;
+    text-shadow: 5px 1px #000000;
   }
+
+  h1>span {
+    background-color:rgb(236, 236, 164);
+    line-height: 4;
+    width: 2000px;
+  }
+
   p {
     color: red;
 }
