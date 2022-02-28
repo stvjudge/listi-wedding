@@ -4,7 +4,8 @@ pipeline {
         stage ('Build'){
             steps {
                 echo 'Running build automation'
-                archiveArtifacts artifacts: '/tmp/listi-wedding.zip'
+                sh 'mkdir /tmp/listi-wedding/'
+                zip archive: true, dir: '', glob: '', zipFile: 'listi-wedding.zip'
             }
         }
     }
