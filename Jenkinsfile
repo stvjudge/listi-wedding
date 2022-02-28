@@ -5,7 +5,7 @@ pipeline {
             steps {
                 echo 'Running build automation'
                 sh 'mkdir -p /tmp/listi-wedding'
-                zip archive: true, dir: '/tmp/listi-wedding/', glob: '', zipFile: 'listi-wedding.zip'
+                zip archive: true, dir: '/tmp/listi-wedding', glob: '', zipFile: 'listi-wedding.zip'
             }
         }
         stage ('DeployToStaging') {
