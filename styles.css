@@ -18,7 +18,7 @@ html, body {
 
 .header-background-image{
   background-image: url("images/double-blue-flower-frame.jpg");
-  height: auto;
+  height: 100%;
   background-repeat: no-repeat;
   background-position: top 5px;
   background-size: 99vw;
@@ -34,7 +34,6 @@ h1 {
 }
 
 h2 {
-  margin: 0;
   font-family: 'WindSong', cursive;
   font-size: 7vw;
   text-align: center;
@@ -42,21 +41,14 @@ h2 {
   text-shadow: 2px 0px #f1bcbc;
 }
 
-h3 {
-  font-family: 'WindSong', cursive;
-  font-size: 6vw;
-  text-align: center;
-  color: rgb(0, 119, 255);
-  text-shadow: 2px 1px black;
-}
 
-
+/* Add a black background color to the top navigation */
 .topnav {
+  background-color: #333;
   overflow: hidden;
-  background-color: rgb(59, 121, 192);
-  height: auto;
 }
 
+/* Style the links inside the navigation bar */
 .topnav a {
   float: left;
   display: block;
@@ -64,23 +56,27 @@ h3 {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  height: auto;
+  font-size: 17px;
 }
 
+/* Change the color of links on hover */
 .topnav a:hover {
   background-color: #ddd;
   color: black;
 }
 
+/* Add an active class to highlight the current page */
 .topnav a.active {
-  background-color: #4baf5c;
+  background-color: #04AA6D;
   color: white;
 }
 
+/* Hide the link that should open and close the topnav on small screens */
 .topnav .icon {
   display: none;
 }
 
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 600px) {
   .topnav a:not(:first-child) {display: none;}
   .topnav a.icon {
@@ -89,9 +85,10 @@ h3 {
   }
 }
 
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
 @media screen and (max-width: 600px) {
   .topnav.responsive {position: relative;}
-  .topnav.responsive .icon {
+  .topnav.responsive a.icon {
     position: absolute;
     right: 0;
     top: 0;
@@ -104,12 +101,16 @@ h3 {
 }
 
 #counter {
-  margin-bottom: 0;
   font-family: 'WindSong', cursive;
   font-size: 5vw;
   font-weight: bold;
   text-align: center;
   text-shadow: 2px 1px #f1bcbc;
+}
+
+#first-page {
+  height: 100%;
+  width: 100%
 }
 
 #myBtn {
@@ -151,6 +152,7 @@ h3 {
 }
 
 #lili, #pisti {
+  text-align: center;
   font-family: 'Lavishly Yours', cursive;
   --b: 10px;
   padding: var(--b);
