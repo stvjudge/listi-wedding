@@ -42,6 +42,14 @@ h2 {
   text-shadow: 2px 0px #f1bcbc;
 }
 
+h3 {
+  font-family: 'WindSong', cursive;
+  font-size: 6vw;
+  text-align: center;
+  color: rgb(0, 119, 255);
+  text-shadow: 2px 1px black;
+}
+
 
 .topnav {
   overflow: hidden;
@@ -140,10 +148,9 @@ h2 {
   margin: 10px;
   padding: 20px;
   font-size: 4vw;
-
 }
 
-#lili, #pisti, .map {
+#lili, #pisti {
   font-family: 'Lavishly Yours', cursive;
   --b: 10px;
   padding: var(--b);
@@ -151,6 +158,39 @@ h2 {
   outline: 1px solid #000;
   outline-offset: calc(-1*var(--b));
   background: conic-gradient(from 90deg at 1px 1px,#0000 90deg,#000 0);
+  width: 100%;
+  height: 100%;
+}
+
+.map {
+    position :relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#location-title {
+  margin-top: 10vh;
+  font-family: 'Lavishly Yours';
+  font-size: 8vh;
+  text-align: center;
+}
+
+#contact-title {
+  margin-top: 10vh;
+  font-family: 'Lavishly Yours';
+  font-size: 8vh;
+  text-align: center;
 }
 
 @media (max-width: 800px) {
@@ -160,9 +200,9 @@ h2 {
 }
 
 .fa {
-  padding: 20px;
-  font-size: 30px;
-  width: 50px;
+  padding: 10px;
+  font-size: 20px;
+  width: 20px;
   text-align: center;
   text-decoration: none;
 }
