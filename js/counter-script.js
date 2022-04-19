@@ -15,7 +15,19 @@ var x = setInterval(function() {
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
+  
+  if (days< 10) {
+    days = "0" + days;}
+
+  if (hours < 10) {
+  hours = "0" + hours;
+  }
+
+  if (minutes < 10) {
+  minutes = "0" + minutes;
+  }
+  
+
   // Output the result in an element with id="demo"
   document.getElementById("counter").innerHTML = "Már csak " + days + " nap, " + hours + ":" + minutes + ":" + seconds + " van hátra!";
     

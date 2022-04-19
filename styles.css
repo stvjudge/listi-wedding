@@ -54,9 +54,9 @@ h2 {
   display: block;
   color: #f2f2f2;
   text-align: center;
-  padding: 14px 16px;
+  padding: 2vh 2vh;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 2vw;
 }
 
 /* Change the color of links on hover */
@@ -82,6 +82,7 @@ h2 {
   .topnav a.icon {
     float: right;
     display: block;
+    padding: 1vh;
   }
 }
 
@@ -116,17 +117,19 @@ h2 {
 #myBtn {
   display: none; /* Hidden by default */
   position: fixed; /* Fixed/sticky position */
-  bottom: 20px; /* Place the button at the bottom of the page */
-  right: 30px; /* Place the button 30px from the right */
+  top: 90%;
+  /* bottom: 20px; Place the button at the bottom of the page */
+  right: 5%;
+  /* right: 50px; Place the button 30px from the right */
   z-index: 99; /* Make sure it does not overlap */
   border: none; /* Remove borders */
   outline: none; /* Remove outline */
   background-color: rgb(59, 121, 192); /* Set a background color */
   color: white; /* Text color */
   cursor: pointer; /* Add a mouse pointer on hover */
-  padding: 15px; /* Some padding */
+  padding: 10px; /* Some padding */
   border-radius: 10px; /* Rounded corners */
-  font-size: 18px; /* Increase font size */
+  font-size: 1.7vw; /* Increase font size */
 }
 
 #myBtn:hover {
@@ -160,8 +163,6 @@ h2 {
   outline: 1px solid #000;
   outline-offset: calc(-1*var(--b));
   background: conic-gradient(from 90deg at 1px 1px,#0000 90deg,#000 0);
-  width: 100%;
-  height: 100%;
 }
 
 .map {
@@ -181,17 +182,10 @@ h2 {
   height: 100%;
 }
 
-#location-title {
+#location-title, #contact-title {
   margin-top: 10vh;
   font-family: 'Lavishly Yours';
-  font-size: 8vh;
-  text-align: center;
-}
-
-#contact-title {
-  margin-top: 10vh;
-  font-family: 'Lavishly Yours';
-  font-size: 8vh;
+  font-size: 7vw;
   text-align: center;
 }
 
@@ -202,9 +196,9 @@ h2 {
 }
 
 .fa {
-  padding: 10px;
-  font-size: 20px;
-  width: 20px;
+  padding: 2vh;
+  font-size: 1.3vw;
+  width: 1vw;
   text-align: center;
   text-decoration: none;
 }
