@@ -17,10 +17,12 @@
 
 <body>
 
+<button onclick="topFunction()" id="myBtn" title="Vissza a tetejére">Vissza a tetejére</button>
+
+
 <div class="topnav" id="myTopnav">
-  <a href="#location-title" class="active">Helyszín</a>
-  <a href="#info">Információk</a>
-  <a href="#page2">Program</a>
+  <a href="#location-title">Helyszín</a>
+  <a href="#information">Információ</a>
   <a href="#contacts">Kapcsolat</a>
   <a href="#slideshow">Galéria</a>
   <a href="javascript:void(0);" class="icon" onclick="responsivenavbar()">
@@ -31,8 +33,8 @@
 
 <div class="main" id="first-page">
   <header class="header-background-image">
-    <h1>The Wedding</h1>
-    <h2>Lili és Pisti</h2>
+    <h1>Lili és Pisti</h1>
+    <h2>Esküvő</h2>
   </header>
 </div>
 
@@ -41,16 +43,61 @@
   <script src="js/counter-script.js" type="text/javascript"></script>
 </div>
 
+<div id="route">
   <p id="location-title">Hogyan jutok el a Hanna Kincsébe?</p>
+    <img src="images/helyszin.jpg"
+  <div id="route_info">
+    <p>A Waze alkalmazást használjátok (a Google Maps pontatlan útvonalon visz). Nagycserénél kell lefordulni, figyeljétek a lufikat és a táblákat!</p>
   <div class="map">
     <iframe class ="responsive-iframe" src="https://www.google.com/maps/embed?pb=!1m32!1m12!1m3!1d952.4615737158886!2d21.776953676559526!3d47.52948307393811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m17!3e0!4m5!1s0x47470c2afe5e2b83%3A0x400c4290c1e1170!2sDebrecen!3m2!1d47.5288879!2d21.625448499999997!4m3!3m2!1d47.5295254!2d21.778401499999998!4m5!1s0x47470b0062c64fa3%3A0x469c884b474f3e6c!2sHanna%20Kincse%2C%20Debrecen%2C%20Hanna%20Kincse%20tanya%201%2C%204002!3m2!1d47.545172699999995!2d21.7887143!5e0!3m2!1shu!2shu!4v1650361580633!5m2!1shu!2shu" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
+  <p id="additional_location_info">További információt az esküvői helyszínünkről <a href="https://www.hannakincse.hu/" target = "_self">itt</a> találhattok.</p>
+</div>
+
+
+<!-- Hasznos információk -->
+
+  <div id="information">
+    <div id="program">
+      <p id="program_title">Program</p>
+      <p>A vendégvárás 15:00-kor kezdődik, ezt követi a kihelyezett polgári szertartás, a vacsora és a reggelig tartó buli! </p>
+    </div>
+  </div>
+
+  <div id="transfer">
+    <div>
+      <p id="transfer_title">Kijutás a hajszínre</p>
+      <p>Debreceni vendégeinket busz fogja a helyszínre vinni, a következő állomásokon lehet felszállni:
+        <div id="felsorolas">
+        <ul>1. 13:45 Tócóskert Lidl parkoló</ul>
+        <ul>2. 14:00 Hortobágy utcai nagy parkoló</ul>
+        <ul>3. 14:15 Faraktár utcai Lidl parkoló</ul></p>
+        </div>
+        <div>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m40!1m12!1m3!1d30476.722682059946!2d21.620387741347535!3d47.53300660549695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m25!3e0!4m5!1s0x47470e1eac5945f1%3A0xf1c2fbd5ea09e092!2sDebrecen%2C%20Lidl%2C%20Der%C3%A9k%20u.%2031%2C%204031!3m2!1d47.5248476!2d21.597507!4m5!1s0x47470e07e25c500f%3A0xd4bd0c9ab3a5140d!2sDebrecen%2C%20Hortob%C3%A1gy%20utca%209!3m2!1d47.5366814!2d21.6145368!4m5!1s0x47470e7f7225d9df%3A0xe3ce0986b7f72da7!2sLidl!3m2!1d47.5293618!2d21.6501582!4m5!1s0x47470b0062c64fa3%3A0x469c884b474f3e6c!2sHanna%20Kincse%20(Horv%C3%A1th%20Birtok)!3m2!1d47.545172699999995!2d21.7887143!5e0!3m2!1shu!2shu!4v1656970657833!5m2!1shu!2shu" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      <p>Amennyiben busszal szeretnétek jönni, kérlek azt előre jelezzétek nekünk! Hazafelé kisbuszok fognak vinni Benneteket hajnal 4 turnusban fél 1 és fél 5 között.</p>
+    </div>
+  </div>
+
+  <div id="szallas">
+    <p id="szallas_title">Szállás</p>
+    <p>Szállást a helyszínen is tudunk biztosítani korlátozott számban légkondicionált faházakban, valamint Debrecenben is. Szállás igényeteket kérjük szintén előre jelezzétek!</p>
+    <img src="images/fahazak_hanna_kincse.jpg">
+  </div>
+
+  <div id="allergenek">
+    <p id="allergenek_title">Allergének</p>
+    <p>Ha van bármilyen étel allergiátok, arról kérlek értesítsetek bennünket! 
+      Tekintve, hogy az esküvői helyszínünk az erdő közepén van, kérjük, hogy aki allergiás bármilyen rovarcsípésre (méh, darázs, stb.) az előre gondoskodjon a szükséges gyógyszerekről.</p>
+  </div>
+  
+
 
   <p id="contact-title">Ha kérdésem van, kit kereshetek?</p>
   <div class="contact" id="contacts">
-    
     <div id="lili">
-      Lili<br>
+      <div id="lili_name">Lili</div>
       Email: baksa.otilia@gmail.com<br>
       Tel: +36-30/575-5456<br>
       Socials: <br>
@@ -59,7 +106,7 @@
     </div>
 
     <div id="pisti">
-      Pisti <br>
+      <div id="pisti_name">Pisti</div>
       Email: istvan.biro03@gmail.com<br>
       Tel: +36-30/276-8544 <br>
       Socials: <br>
@@ -149,13 +196,18 @@
     <span class="dot"></span> 
     <span class="dot"></span> 
   </div>
-  
-  
-<button onclick="topFunction()" id="myBtn" title="Vissza a tetejére">Vissza a tetejére</button>
+
+  <br>
+
+  <div id="closing">
+    <p>Már nagyon várjuk, hogy Veletek ünnepelhessünk!</p>
+  </div>
+
+
 <script src="js/onscrollevent.js"></script>
 <script src="js/slideShow.js"></script>
-<script src="js/offconvasmenu.js"></script>
 <script src="js/topnav.js"></script>
+<script src="js/scrolltop.js"></script>
 
 </body>
 </html>

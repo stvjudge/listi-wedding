@@ -4,6 +4,11 @@
 }
 
 @font-face {
+  font-family: Parisienne;
+  src: url(fonts/Parisienne-Regular.ttf);
+}
+
+@font-face {
   font-family: Distant_Stroke;
   src: url(fonts/Distant_Stroke.otf);
 }
@@ -38,19 +43,19 @@ html, body {
 }
 
 h1 {
-  font-family: 'Distant_Stroke';
+  font-family: 'Parisienne';
   font-size: 10vw;
   text-align: center;
-  color: rgb(0, 0, 0);
+  color: rgb(46, 133, 148);
   /* text-shadow: 2px 2px #e2a3a3; */
 }
 
 h2 {
-  font-family: 'Distant_Stroke', cursive;
+  font-family: 'Parisienne', cursive;
   font-size: 7vw;
   text-align: center;
-  color: rgb(75, 77, 75);
-  text-shadow: 2px 0px #f1bcbc;
+  color: rgb(46, 133, 148);
+  /* text-shadow: 2px 0px #f1bcbc; */
 }
 
 
@@ -66,14 +71,15 @@ h2 {
 
 /* Style the links inside the navigation bar */
 .topnav a {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Parisienne';
   float: left;
   display: block;
   color: #f2f2f2;
   text-align: center;
   padding: 2vh 2vh;
   text-decoration: none;
-  font-size: 2vw;
+  font-size: 3.5vw;
+  font-weight: 550;
 }
 
 /* Change the color of links on hover */
@@ -119,11 +125,11 @@ h2 {
 }
 
 #counter {
-  font-family: 'WindSong', cursive;
-  font-size: 5vw;
-  font-weight: bold;
+  font-family: 'Parisienne', cursive;
+  font-size: 6vw;
+  color: rgb(46, 133, 148);
   text-align: center;
-  text-shadow: 2px 1px #f1bcbc;
+  font-weight: 550;
 }
 
 #first-page {
@@ -132,6 +138,7 @@ h2 {
 }
 
 #myBtn {
+  font-family: 'Parisienne';
   display: none; /* Hidden by default */
   position: fixed; /* Fixed/sticky position */
   top: 90%;
@@ -141,12 +148,12 @@ h2 {
   z-index: 99; /* Make sure it does not overlap */
   border: none; /* Remove borders */
   outline: none; /* Remove outline */
-  background-color: rgb(59, 121, 192); /* Set a background color */
+  background-color: rgb(127, 171, 179); /* Set a background color */
   color: white; /* Text color */
   cursor: pointer; /* Add a mouse pointer on hover */
   padding: 10px; /* Some padding */
   border-radius: 10px; /* Rounded corners */
-  font-size: 1.7vw; /* Increase font size */
+  font-size: 3vw; /* Increase font size */
 }
 
 #myBtn:hover {
@@ -171,16 +178,23 @@ h2 {
   font-size: 4vw;
 }
 
-#lili, #pisti, .slideshow-container {
+#lili, #pisti, .slideshow-container, #program, #transfer, #szallas, #allergenek, #route {
   max-width: 100%;
   text-align: center;
-  font-family: 'Lavishly Yours', cursive;
+  font-family: 'Parisienne', cursive;
+  font-size: 3.3vw;
   --b: 10px;
   padding: var(--b);
   border: calc(2*var(--b)) solid #0000;
   outline: 1px solid #000;
   outline-offset: calc(-1*var(--b));
   background: conic-gradient(from 90deg at 1px 1px,#0000 90deg,#000 0);
+}
+
+#lili_name, #pisti_name {
+  font-family:'Parisienne';
+  font-size: 5vw;
+  font-weight: 580;
 }
 
 .map {
@@ -200,11 +214,17 @@ h2 {
   height: 100%;
 }
 
-#location-title, #contact-title, #galery {
+#contact-title, #galery {
   margin-top: 10vh;
-  font-family: 'Lavishly Yours';
-  font-size: 7vw;
+  font-family: 'Parisienne';
+  font-size: 6vw;
   text-align: center;
+}
+
+#location-title {
+  margin-top: 0;
+  font-family: 'Parisienne';
+  font-size: 6vw;
 }
 
 @media (max-width: 800px) {
@@ -280,4 +300,33 @@ img {
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
   .text {font-size: 11px}
+}
+
+#route_info, #additional_location_info {
+  font-family:'Parisienne';
+  font-size: 4vw;
+  text-align: center;
+}
+
+#program, #transfer {
+  font-family: 'Parisienne';
+  font-size: 4vw;
+  text-align: center;
+  margin-bottom: auto;
+}
+
+#program_title, #transfer_title, #szallas_title, #allergenek_title {
+  font-size: 6vw;
+  margin-top: auto;
+}
+
+#closing {
+  font-family: 'Parisienne';
+  font-size: 6vw;
+  text-align: center;
+}
+
+#felsorolas {
+  margin-left: 15vw;
+  text-align: left;
 }
